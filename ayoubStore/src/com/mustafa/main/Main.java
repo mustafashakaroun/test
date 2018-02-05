@@ -1,10 +1,8 @@
 package com.mustafa.main;
 
-public class Main {
+import com.mustafa.models.Product;
 
-	
-	
-	
+public class Main {
 	
 //	Welcome To Ayoub Store 
 //	Please enter your first name
@@ -28,6 +26,7 @@ public class Main {
 //	we hope that we will see you again :)
 	
 	public static void main(String[] args) {
+		
 		
 
 	}
