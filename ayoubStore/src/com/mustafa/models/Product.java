@@ -5,14 +5,14 @@ public abstract class Product {
 	private double discount;
 	private double salary;
 	
+	public Product (){
+		
+	}
+	
 	public Product(double discount, double salary) {
 		super();
 		this.discount = discount;
 		this.salary = salary;
-	}
-	
-	public Product (){
-		
 	}
 	
 	public double getDiscount() {

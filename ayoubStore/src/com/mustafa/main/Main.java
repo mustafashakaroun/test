@@ -1,5 +1,8 @@
 package com.mustafa.main;
 
+import java.util.Scanner;
+
+import com.mustafa.models.Person;
 import com.mustafa.models.Product;
 
 public class Main {
@@ -25,10 +28,30 @@ public class Main {
 //	total : 937$
 //	we hope that we will see you again :)
 	
+	
+	
 	public static void main(String[] args) {
 		
 		
-
+		
+		Scanner scanner = new Scanner(System.in);
+	
+		System.out.println("Welcome To Ayoub Store");
+		System.out.println("Please enter your first name");
+		String inputFirstName = scanner.nextLine();
+		System.out.println("Please enter your last name");
+		String inputLastName = scanner.nextLine();
+		System.out.println("please enter you phone number");
+		String inputPhoneNumber = scanner.nextLine();
+		Person person1 = new Person(inputFirstName,inputLastName,inputPhoneNumber);
+		
+		System.out.println("Welcome " + person1.fullName() + ", please select what you want");
+		System.out.println("1-show all products with salaries");
+		System.out.println("2-show products with offer");
+		System.out.println("3-show my cart");
+		System.out.println("4-select product");
+		System.out.println("5- pay");
+		
 	}
 
 }
