@@ -2,6 +2,7 @@ package com.mustafa.models;
 
 public abstract class Product {
 	
+	private String serialNumber;
 	private double discount;
 	private double salary;
 	
@@ -9,10 +10,11 @@ public abstract class Product {
 		
 	}
 	
-	public Product(double discount, double salary) {
+	public Product(double discount, double salary, String serialNumber) {
 		super();
 		this.discount = discount;
 		this.salary = salary;
+		this.serialNumber = serialNumber;
 	}
 	
 	public double getDiscount() {
@@ -28,6 +30,12 @@ public abstract class Product {
 		this.salary = salary;
 	}
 	
+	public String getSerialNumber(){
+		return serialNumber;
+	}
 	
+	public void setSerialNumber(String serialNumber){
+		this.serialNumber = serialNumber;
+	}
 
 }
