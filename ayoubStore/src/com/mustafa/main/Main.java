@@ -72,6 +72,8 @@ public class Main {
 		String inputPhoneNumber = scanner.nextLine();
 		Person person1 = new Person(inputFirstName,inputLastName,inputPhoneNumber);
 		
+		int n;
+		do{
 		System.out.println("Welcome " + person1.fullName() + ", please select what you want");
 		System.out.println("1-show all products with salaries");
 		System.out.println("2-show products with offer");
@@ -80,6 +82,14 @@ public class Main {
 		System.out.println("5- pay");
 		
 		
+		Scanner scanner1 = new Scanner(System.in);
+		System.out.println("your choice is: ");
+		n = scanner1.nextInt();
+		if(n<1 || n>5){
+			System.out.println("Please choose between 1 and 5");
+			continue;
+		}
+		}while(n!=5);
 	}
 
 }
