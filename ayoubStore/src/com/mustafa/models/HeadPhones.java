@@ -6,10 +6,10 @@ public class HeadPhones extends Product{
 		
 	}
 
-	public HeadPhones(double discount, double salary, String serialNumber) {
-		super(discount, salary, serialNumber);
+	public HeadPhones(double discount, double salary, String serialNumber, String name) {
+		super(discount, salary, serialNumber, name);
 	}
 
-	
+
 	
 }

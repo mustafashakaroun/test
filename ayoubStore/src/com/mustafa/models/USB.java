@@ -8,8 +8,8 @@ public class USB extends Product{
 
 	}
 
-	public USB(double discount, double salary, String serialNumber, String size) {
-		super(discount, salary, serialNumber);
+	public USB(double discount, double salary, String serialNumber, String name,String size) {
+		super(discount, salary, serialNumber, name);
 		this.size = size;
 	}
 	

@@ -5,17 +5,15 @@ public class Laptop extends Product{
 	private String hardDisk;
 	private String RAM;
 	private String CPU;
-	private String name;
 	
 	public Laptop() {
 	}
 	
 	public Laptop(double discount, double salary, String serialNumber, String hardDisk, String RAM, String CPU, String name) {
-		super(discount, salary, serialNumber);
+		super(discount, salary, serialNumber, name);
 		this.hardDisk = hardDisk;
 		this.RAM = RAM;
 		this.CPU = CPU;
-		this.name = name;
 	}
 
 	public String getHardDisk() {
