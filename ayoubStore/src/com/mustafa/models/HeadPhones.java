@@ -10,6 +10,5 @@ public class HeadPhones extends Product{
 		super(discount, salary, serialNumber, name);
 	}
 
-
 	
 }

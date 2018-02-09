@@ -39,6 +39,11 @@ public class Laptop extends Product{
 	public void setCPU(String cPU) {
 		CPU = cPU;
 	}
+
+	@Override
+	public String toString() {
+		return super.toString() + "[hardDisk=" + hardDisk + ", RAM=" + RAM + ", CPU=" + CPU + "]";
+	}
 	
 	
 	

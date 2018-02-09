@@ -1,6 +1,7 @@
 package com.mustafa.main;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 import com.mustafa.models.HeadPhones;
@@ -100,7 +101,6 @@ public class Main {
 		System.out.println("5- pay");
 		System.out.println("-------------------------------------------");
 		
-		
 		Scanner scanner1 = new Scanner(System.in);
 		System.out.println("your choice is: ");
 		n = scanner1.nextInt();
@@ -110,33 +110,26 @@ public class Main {
 		}
 
 		if(n == 1){
-			System.out.println("Product1: " + headphones1.getName() + "                    " + headphones1.getSalary() + " $   with discount " + headphones1.getDiscount() + " %");
-			System.out.println("Product2: " + headphones2.getName() + "                    " + headphones2.getSalary() + " $   with discount " + headphones1.getDiscount() + " %");
-			System.out.println("Product3: " + keyboard1.getName() + "                      " + keyboard1.getSalary() + " $   with discount " +keyboard1.getSalary() + " %");
-			System.out.println("Product4: " + keyboard2.getName() + "                      " + keyboard2.getSalary() + " $   with discount " +keyboard2.getSalary() + " %");
-			System.out.println("Product5: " + laptop1.getName() + "  " + laptop1.getCPU() + "  " + laptop1.getHardDisk() + "  " + laptop1.getRAM() + "     " + laptop1.getSalary() + " $   with discount " + laptop1.getDiscount() + " %");
-			System.out.println("Product6: " + laptop2.getName() + "  " + laptop2.getCPU() + "  " + laptop2.getHardDisk() + "  " + laptop2.getRAM() + "     " + laptop2.getSalary() + " $   with discount " + laptop2.getDiscount() + " %");
-			System.out.println("Product7: " + mouse1.getName() + "                    " + mouse1.getSalary() + " $   with discount " + mouse1.getDiscount() + " %");
-			System.out.println("Product8: " + mouse2.getName() + "                    " + mouse2.getSalary() + " $   with discount " + mouse2.getDiscount() + " %");
-			System.out.println("Product9: " + printer1.getName() + "                    " + printer1.getSalary() + " $   with discount " + printer1.getDiscount() + " %");
-			System.out.println("Product10: " + printer2.getName() + "                    " + printer2.getSalary() + " $   with discount " + printer2.getDiscount() + " %");
-			System.out.println("Product11: " + speaker1.getName() + "                    " + speaker1.getSalary() + " $   with discount " + speaker1.getDiscount() + " %");
-			System.out.println("Product12: " + speaker2.getName() + "                    " + speaker2.getSalary() + " $   with discount " + speaker2.getDiscount() + " %");
-			System.out.println("Product13: " + usb1.getName() + "                    " + usb1.getSalary() + " $   with discount " + usb1.getDiscount() + " %");
-			System.out.println("Product14: " + usb2.getName() + "                    " + usb2.getSalary() + " $   with discount " + usb2.getDiscount() + " %");
+			printAllProducts(allProducts);
 		}else if(n == 2){
-			System.out.println("Product1: " + headphones1.getName() + "                    " + headphones1.getSalary() + " $   with discount " + headphones1.getDiscount() + " %");
-			System.out.println("Product3: " + keyboard1.getName() + "                      " + keyboard1.getSalary() + " $   with discount " +keyboard1.getSalary() + " %");
-			System.out.println("Product5: " + laptop1.getName() + "  " + laptop1.getCPU() + "  " + laptop1.getHardDisk() + "  " + laptop1.getRAM() + "     " + laptop1.getSalary() + " $   with discount " + laptop1.getDiscount() + " %");
-			System.out.println("Product6: " + laptop2.getName() + "  " + laptop2.getCPU() + "  " + laptop2.getHardDisk() + "  " + laptop2.getRAM() + "     " + laptop2.getSalary() + " $   with discount " + laptop2.getDiscount() + " %");
-			System.out.println("Product7: " + mouse1.getName() + "                    " + mouse1.getSalary() + " $   with discount " + mouse1.getDiscount() + " %");
-			System.out.println("Product8: " + mouse2.getName() + "                    " + mouse2.getSalary() + " $   with discount " + mouse2.getDiscount() + " %");
-			System.out.println("Product9: " + printer1.getName() + "                    " + printer1.getSalary() + " $   with discount " + printer1.getDiscount() + " %");
-			System.out.println("Product10: " + printer2.getName() + "                    " + printer2.getSalary() + " $   with discount " + printer2.getDiscount() + " %");
-			System.out.println("Product11: " + speaker1.getName() + "                    " + speaker1.getSalary() + " $   with discount " + speaker1.getDiscount() + " %");
-			System.out.println("Product13: " + usb1.getName() + "                    " + usb1.getSalary() + " $   with discount " + usb1.getDiscount() + " %");
+			printProductsWithDiscounts(allProducts);
 		}
 		}while(n!=5);
+	}
+
+	
+	private static void printAllProducts(ArrayList<Product> allProducts) {
+		for(int i=0; i<allProducts.size(); i++){
+			System.out.println(i+1 + " " + allProducts.get(i));
+		}		
+	}
+	
+	private static void printProductsWithDiscounts(ArrayList<Product> allProducts) {
+		for(int i=0; i<allProducts.size(); i++){
+			if(allProducts.get(i).getDiscount() > 0){
+			System.out.println(i+1 + " " + allProducts.get(i));
+			}
+		}		
 	}
 	
 	

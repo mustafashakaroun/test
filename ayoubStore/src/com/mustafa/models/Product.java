@@ -2,10 +2,10 @@ package com.mustafa.models;
 
 public abstract class Product {
 	
-	private String name;
-	private String serialNumber;
-	private double discount;
-	private double salary;
+	protected String name;
+	protected String serialNumber;
+	protected double discount;
+	protected double salary;
 	
 	public Product (){
 		
@@ -46,6 +46,11 @@ public abstract class Product {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	@Override
+	public String toString() {
+		return "[name=" + name + ", discount=" + discount + " % , salary=" + salary + " $" + "]";
 	}
 	
 	

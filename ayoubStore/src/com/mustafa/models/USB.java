@@ -12,6 +12,11 @@ public class USB extends Product{
 		super(discount, salary, serialNumber, name);
 		this.size = size;
 	}
+
+	@Override
+	public String toString() {
+		return super.toString() +"[size=" + size + "]";
+	}
 	
 	
 }
