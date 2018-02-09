@@ -1,14 +1,22 @@
 package com.mustafa.models;
 
+import java.util.ArrayList;
+
 public class Invoice{
 	
 	private double totalSalary;
-	private Product[] arrayProducts;
+	private ArrayList<Product> products = new ArrayList<>();
 	
-	public Invoice(double totalSalary, Product[] arrayProducts) {
+	
+	
+	public Invoice() {
+		super();
+	}
+
+	public Invoice(double totalSalary, ArrayList<Product> products) {
 		super();
 		this.totalSalary = totalSalary;
-		this.arrayProducts = arrayProducts;
+		this.products = products;
 	}
 
 	public double getTotalSalary() {
@@ -19,13 +27,15 @@ public class Invoice{
 		this.totalSalary = totalSalary;
 	}
 
-	public Product[] getArrayProducts() {
-		return arrayProducts;
+	public ArrayList<Product> getProducts() {
+		return products;
 	}
 
-	public void setArrayProducts(Product[] arrayProducts) {
-		this.arrayProducts = arrayProducts;
+	public void setProducts(ArrayList<Product> products) {
+		this.products = products;
 	}
+
+	
 
 	
 }

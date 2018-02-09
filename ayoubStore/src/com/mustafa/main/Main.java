@@ -96,28 +96,52 @@ public class Main {
 		System.out.println("Welcome " + person1.fullName() + ", please select what you want");
 		System.out.println("1-show all products with salaries");
 		System.out.println("2-show products with offer");
-		System.out.println("3-show my cart");
-		System.out.println("4-select product");
+		System.out.println("3-select product");
+		System.out.println("4-show my cart ");
 		System.out.println("5- pay");
 		System.out.println("-------------------------------------------");
 		
-		Scanner scanner1 = new Scanner(System.in);
 		System.out.println("your choice is: ");
-		n = scanner1.nextInt();
+		n = scanner.nextInt();
 		if(n<1 || n>5){
 			System.out.println("Please choose between 1 and 5");
 			continue;
 		}
 
-		if(n == 1){
+		switch (n){
+		case 1 : 
 			printAllProducts(allProducts);
-		}else if(n == 2){
+			break;
+		case 2 : 
 			printProductsWithDiscounts(allProducts);
+			break;
+		case 3 : 
+			selectProduct(allProducts, person1);
+			break;
+		case 4 :
+			break;
+		case 5 :
+			break;
 		}
 		}while(n!=5);
 	}
 
 	
+	private static void selectProduct(ArrayList<Product> allProducts, Person person) {
+	
+		printAllProducts(allProducts);
+		System.out.println("Please choose product by number: ");
+		Scanner scanner = new Scanner(System.in);
+		int n = scanner.nextInt();
+		if(n<0 || n>allProducts.size()-1){
+			System.out.println("bala mantashe");
+			return;
+		}
+		Product selectedProduct = allProducts.remove(n-1);
+		person.getInvoice().getProducts().add(selectedProduct);
+}
+
+
 	private static void printAllProducts(ArrayList<Product> allProducts) {
 		for(int i=0; i<allProducts.size(); i++){
 			System.out.println(i+1 + " " + allProducts.get(i));

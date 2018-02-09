@@ -5,6 +5,7 @@ public class Person {
 	private String firstName;
 	private String lastName;
 	private String phoneNumber;
+	private Invoice invoice = new Invoice();
 	
 	public Person(){
 		
@@ -15,6 +16,7 @@ public class Person {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.phoneNumber = phoneNumber;
+		
 	}
 
 	public String getFirstName() {
@@ -44,5 +46,13 @@ public class Person {
 	public String fullName(){
 		String fullName = this.firstName.concat(" ").concat(this.lastName);
 		return fullName;
+	}
+
+	public Invoice getInvoice() {
+		return invoice;
+	}
+
+	public void setInvoice(Invoice invoice) {
+		this.invoice = invoice;
 	}
 }
