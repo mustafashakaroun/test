@@ -23,7 +23,7 @@ public class Mouse extends Product{
 
 	@Override
 	public String toString() {
-		return super.toString() + (isSilent()?" [silent :) ,":"[");
+		return super.toString() + (isSilent()?" [silent :)":"[");
 	}
 
 	

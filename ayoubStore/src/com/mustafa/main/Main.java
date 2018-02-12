@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
+import javax.sound.midi.Soundbank;
+
 import com.mustafa.models.HeadPhones;
 import com.mustafa.models.Keyboard;
 import com.mustafa.models.Laptop;
@@ -59,8 +61,10 @@ public class Main {
 		Speaker speaker1 = new Speaker(3.8, 20, "L546546","normal speaker");
 		Speaker speaker2 = new Speaker(0, 30, "L5465487", "original speaker");
 		
-		USB usb1 = new USB(30, 20, "L5465", "16 GB", "sundisk usb");
-		USB usb2 = new USB(0, 80, "L54655", "120 GB", "apple usb");
+		USB usb1 = new USB(30, 20, "L5465", "sundisk usb", "16 GB");
+		USB usb2 = new USB(0, 80, "L54655", "apple usb", "120 GB");
+		
+		mouse2.setSilent(true);
 		
 		ArrayList<Product> allProducts = new ArrayList<Product>();
 		allProducts.add(speaker2);
@@ -88,12 +92,12 @@ public class Main {
 		String inputLastName = scanner.nextLine();
 		System.out.println("please enter you phone number");
 		String inputPhoneNumber = scanner.nextLine();
-		Person person1 = new Person(inputFirstName,inputLastName,inputPhoneNumber);
+		Person person = new Person(inputFirstName,inputLastName,inputPhoneNumber);
 		
 		int n;
 		do{
 		System.out.println("------------------------------------------");
-		System.out.println("Welcome " + person1.fullName() + ", please select what you want");
+		System.out.println("Welcome " + person.fullName() + ", please select what you want");
 		System.out.println("1-show all products with salaries");
 		System.out.println("2-show products with offer");
 		System.out.println("3-select product");
@@ -116,30 +120,19 @@ public class Main {
 			printProductsWithDiscounts(allProducts);
 			break;
 		case 3 : 
-			selectProduct(allProducts, person1);
+			selectProduct(allProducts, person);
 			break;
 		case 4 :
+			myOrder(person);
 			break;
 		case 5 :
+			System.out.println("thanks for purchase from ayoub store");
+			selectedProduct(person);
+			System.out.println("Total price: " + person.getInvoice().getTotalSalary() + " $");
 			break;
 		}
 		}while(n!=5);
 	}
-
-	
-	private static void selectProduct(ArrayList<Product> allProducts, Person person) {
-	
-		printAllProducts(allProducts);
-		System.out.println("Please choose product by number: ");
-		Scanner scanner = new Scanner(System.in);
-		int n = scanner.nextInt();
-		if(n<0 || n>allProducts.size()-1){
-			System.out.println("bala mantashe");
-			return;
-		}
-		Product selectedProduct = allProducts.remove(n-1);
-		person.getInvoice().getProducts().add(selectedProduct);
-}
 
 
 	private static void printAllProducts(ArrayList<Product> allProducts) {
@@ -156,6 +149,38 @@ public class Main {
 		}		
 	}
 	
+	private static void selectProduct(ArrayList<Product> allProducts, Person person) {
+		
+		printAllProducts(allProducts);
+		System.out.println("Please choose product by number: ");
+		Scanner scanner = new Scanner(System.in);
+		int n = scanner.nextInt();
+		if(n<0 || n>allProducts.size()-1){
+			System.out.println("bala mantashe");
+			return;
+		}
+		Product selectedProduct = allProducts.remove(n-1);
+		person.getInvoice().getProducts().add(selectedProduct);
+		
+		double price = (double)selectedProduct.getSalary();
+		person.getInvoice().modifyPrice(price);
+	}
+
+
+	private static void selectedProduct(Person person) {
+		for(int i=0; i<person.getInvoice().getProducts().size()-1; i++){
+			Product selectedProduct = person.getInvoice().getProducts().get(i);
+			System.out.println(i+1 + "       " + selectedProduct.getName() + "      "  + selectedProduct.getSalary() + " $");
+		}
+	}
 	
+	private static void myOrder(Person person) {
+	
+		for(int i=0; i<person.getInvoice().getProducts().size()-1; i++){
+			Product selectedProduct = person.getInvoice().getProducts().get(i);
+			System.out.println(i+1 + "       " + selectedProduct.getName() + "      "  + selectedProduct.getSalary() + " $");
+		}
+	
+}
 
 }

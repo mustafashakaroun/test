@@ -35,7 +35,9 @@ public class Invoice{
 		this.products = products;
 	}
 
-	
+	public void modifyPrice(double n){
+		this.totalSalary += n;
+	}
 
 	
 }
