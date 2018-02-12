@@ -168,7 +168,7 @@ public class Main {
 
 
 	private static void selectedProduct(Person person) {
-		for(int i=0; i<person.getInvoice().getProducts().size()-1; i++){
+		for(int i=0; i<person.getInvoice().getProducts().size(); i++){
 			Product selectedProduct = person.getInvoice().getProducts().get(i);
 			System.out.println(i+1 + "       " + selectedProduct.getName() + "      "  + selectedProduct.getSalary() + " $");
 		}
@@ -176,7 +176,7 @@ public class Main {
 	
 	private static void myOrder(Person person) {
 	
-		for(int i=0; i<person.getInvoice().getProducts().size()-1; i++){
+		for(int i=0; i<person.getInvoice().getProducts().size(); i++){
 			Product selectedProduct = person.getInvoice().getProducts().get(i);
 			System.out.println(i+1 + "       " + selectedProduct.getName() + "      "  + selectedProduct.getSalary() + " $");
 		}
