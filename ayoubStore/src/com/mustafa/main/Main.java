@@ -123,7 +123,7 @@ public class Main {
 			selectProduct(allProducts, person);
 			break;
 		case 4 :
-			myOrder(person);
+			selectedProduct(person);
 			break;
 		case 5 :
 			System.out.println("thanks for purchase from ayoub store");
@@ -174,13 +174,5 @@ public class Main {
 		}
 	}
 	
-	private static void myOrder(Person person) {
-	
-		for(int i=0; i<person.getInvoice().getProducts().size(); i++){
-			Product selectedProduct = person.getInvoice().getProducts().get(i);
-			System.out.println(i+1 + "       " + selectedProduct.getName() + "      "  + selectedProduct.getSalary() + " $");
-		}
-	
-}
 
 }
