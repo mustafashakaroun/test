@@ -155,7 +155,7 @@ public class Main {
 		System.out.println("Please choose product by number: ");
 		Scanner scanner = new Scanner(System.in);
 		int n = scanner.nextInt();
-		if(n<0 || n>allProducts.size()-1){
+		if(n<0 || n>allProducts.size()){
 			System.out.println("bala mantashe");
 			return;
 		}
