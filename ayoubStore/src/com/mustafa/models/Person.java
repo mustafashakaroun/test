@@ -1,11 +1,14 @@
 package com.mustafa.models;
 
+
 public class Person {
 
 	private String firstName;
 	private String lastName;
 	private String phoneNumber;
 	private Invoice invoice = new Invoice();
+	private String userName = "mustafashakaroun";
+	private String Password = "123456";
 	
 	public Person(){
 		
@@ -55,4 +58,16 @@ public class Person {
 	public void setInvoice(Invoice invoice) {
 		this.invoice = invoice;
 	}
+	
+	public String getUserName(){
+		return userName;
+	}
+	
+
+	public String getPassword() {
+		return Password;
+	}
+
+	
+	
 }

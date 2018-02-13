@@ -82,9 +82,8 @@ public class Main {
 		allProducts.add(laptop2);
 		allProducts.add(laptop1);
 		
-		
 		Scanner scanner = new Scanner(System.in);
-	
+		
 		System.out.println("Welcome To Ayoub Store");
 		System.out.println("Please enter your first name");
 		String inputFirstName = scanner.nextLine();
@@ -93,6 +92,26 @@ public class Main {
 		System.out.println("please enter you phone number");
 		String inputPhoneNumber = scanner.nextLine();
 		Person person = new Person(inputFirstName,inputLastName,inputPhoneNumber);
+		
+		boolean flag = true;
+		do{
+		System.out.println("Please enter your username: ");
+		String inputUsername = scanner.nextLine();
+		if(person.getUserName() != inputUsername){
+			continue;
+		}else{
+			flag = false;
+		}
+		}while(flag);
+		do{
+		System.out.println("Please enter your password: ");
+		String inputPassword = scanner.nextLine();
+		if(person.getPassword() != inputPassword){
+			continue;
+		}else{
+			flag = false;
+		}
+		}while(flag);
 		
 		int n;
 		do{
