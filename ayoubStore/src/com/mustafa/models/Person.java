@@ -1,5 +1,6 @@
 package com.mustafa.models;
 
+import java.util.ArrayList;
 
 public class Person {
 
@@ -68,6 +69,8 @@ public class Person {
 		return Password;
 	}
 
-	
+	public static Person createPerson(String firstName, String lastName, String phoneNumber){
+		return new Person(firstName, lastName, phoneNumber);
+	}
 	
 }
