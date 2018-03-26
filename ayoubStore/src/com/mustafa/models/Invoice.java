@@ -13,10 +13,9 @@ public class Invoice{
 		super();
 	}
 
-	public Invoice(double totalSalary, ArrayList<Product> products) {
+	public Invoice(double totalSalary) {
 		super();
 		this.totalSalary = totalSalary;
-		this.products = products;
 	}
 
 	public double getTotalSalary() {
@@ -35,8 +34,8 @@ public class Invoice{
 		this.products = products;
 	}
 
-	public void modifyPrice(double n){
-		this.totalSalary += n;
+	public void modifyPrice(double price){
+		this.totalSalary += price;
 	}
 
 	
